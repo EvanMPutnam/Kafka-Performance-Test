@@ -1,0 +1,5 @@
+FROM confluentinc/cp-kafka:latest
+WORKDIR /
+COPY kafka-perf.sh /
+COPY configs/ /
+ENTRYPOINT ./kafka-perf.sh
