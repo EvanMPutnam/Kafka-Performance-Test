@@ -16,3 +16,5 @@ services:
       KAFKA_NUM_NETWORK_THREADS: 16
       KAFKA_NUM_IO_THREADS: 16
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes: 
+      - /dev:/kafka
