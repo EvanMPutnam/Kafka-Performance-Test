@@ -1,1 +1,8 @@
 Just a dummy file.
+
+
+/etc/docker/daemon.json
+{
+"data-root": "/mnt/newlocation"
+}
+sudo systemctl restart docker
