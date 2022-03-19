@@ -10,3 +10,7 @@ docker build -t kafka-test:latest -f Dockerfile.kafka .
 docker run --network host -it kafka-test:latest
 ```
 
+# TMPFS Mode
+There is a file for tmpfs testing in the configs folder.  This is helpful for baselining against memory.
+
+

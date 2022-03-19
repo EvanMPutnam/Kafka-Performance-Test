@@ -1,0 +1,21 @@
+version: '2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - "9092:9092"
+    environment:
+      # Any standard environment variables can be overwritten here.
+      DOCKER_API_VERSION: 1.22
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_NUM_REPLICA_FETCHERS: 16
+      KAFKA_NUM_NETWORK_THREADS: 16
+      KAFKA_NUM_IO_THREADS: 16
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes: 
+      - type: tmpfs
+        target: /dev:/kafka
